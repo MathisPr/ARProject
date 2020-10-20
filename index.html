@@ -1,12 +1,106 @@
-<!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
-<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
-<body style='margin : 0px; overflow: hidden;'>
-	<h1>Hello World!!</h1>
-	<a-scene embedded arjs='sourceType: webcam;'>
-		<a-box position='0 0.5 10' material='opacity: 0.5;'>
-        </a-box>
-		<a-marker-camera preset='hiro'></a-marker-camera>
-	</a-scene>
-</body>
+<!doctype html>
+<html>
+<head>
+    <title>Animating objects</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+</head>
 
+<body>
+    <a-scene>
+        <!-- Asset Management System -->
+        <a-assets>
+            <img id="floor" src="Textures/TexturesCom_Pavement_HerringboneNew_1K_albedo.png">
+        </a-assets>
+
+        <!-- Ground -->
+        <a-plane src="#floor" shader="flat" rotation="-90 0 0" scale="5 5 1">
+        </a-plane>
+
+        <!-- Camera -->
+        <a-entity position="0 0 8">
+            <a-camera></a-camera>
+        </a-entity>
+        
+        <!-- Box Rotation-->
+        <a-box  color="red"
+                position="0 5 0"
+        >       
+            <a-animation
+                attribute="rotation"
+                to="0 360 0"
+                repeat="2"
+                dur="5000"
+                easing="linear"
+            >
+            </a-animation>
+        </a-box>
+ 
+        <!-- Box Moving-->
+        <a-box  color="yellow"
+                position="0 5 0"
+        >       
+            <a-animation
+                attribute="position"
+                from=" 3 3 3"
+                to="0 0 0"
+                direction="alternate"
+                repeat="2"
+                dur="5000"
+                easing="linear"
+            >
+            </a-animation>
+        </a-box>
+        
+        
+                <!-- Box Warping-->
+        <a-box  color="green"
+                position="0 3 0"
+        >       
+            <a-animation
+                attribute="scale"
+                to="0.2 4 2"
+                direction="alternate"
+                repeat="2"
+                dur="5000"
+                easing="ease-out"
+            >
+            </a-animation>
+        </a-box>
+        
+        <!-- Animated Color -->
+        <a-sphere
+                 color="purple"
+                  radius="0.5"
+                  position="0 1 0"
+        >
+        <a-animation
+                    attribute="material.color"
+                    from="#00AAFF"
+                    to="#0000AA"
+                    repeat="2"
+                    direction="alternate"
+                    dur="1500"
+        >
+        </a-animation>    
+        </a-sphere>
+        
+        
+        <a-cone     
+                    color="#484848"
+                    position="0 -0.5 0"
+        >
+                <a-animation
+                    attribute="material.opacity"
+                    from="1"
+                    to="0"
+                    repeat="2"
+                    direction="alternate"
+                    dur="1500"                   
+                >
+                </a-animation>     
+        </a-cone>
+        
+        
+    </a-scene>
+</body>
+</html>
