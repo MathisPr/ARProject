@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Animating objects</title>
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 </head>
 
 <body>
@@ -22,18 +22,20 @@
         </a-entity>
         
         <!-- Box Rotation-->
-        <a-box  color="red"
-                position="0 5 0"
-        >       
-            <a-animation
-                attribute="rotation"
-                to="0 360 0"
-                repeat="2"
-                dur="5000"
-                easing="linear"
-            >
-            </a-animation>
-        </a-box>
+        <e-entity>
+            <a-box  color="red"
+                    position="0 5 0"
+            >       
+                <a-animation
+                    attribute="rotation"
+                    to="0 360 0"
+                    repeat="2"
+                    dur="5000"
+                    easing="linear"
+                >
+                </a-animation>
+            </a-box>
+        </e-entity>
  
         <!-- Box Moving-->
         <a-box  color="yellow"
