@@ -1,3 +1,4 @@
+@@ -0,0 +1,44 @@
 <html>
 <!-- Source: https://ar-js-org.github.io/AR.js-Docs/  Marker Based Example 24.10.2020-->
 
@@ -12,17 +13,27 @@
 
   <body style="margin : 0px; overflow: hidden;">
 
+    <a-assets>
+      <a-asset-item
+          id="Kapselpressmaschine"
+          src="assets/Kapselpressmaschine.gltf"
+      ></a-asset-item>
+  </a-assets>
+
+
     <a-scene embedded arjs>
       <!-- Marker -->
       <a-marker preset="hiro">
 
-        <a-entity>
-            <a-box 
-                position="0 1 0"
-                opacity="0.5"            
-            >
-            </a-box>
-        </a-entity>
+        <a-entity
+        id="Kapselpressmaschine"
+        scale="1 1 1"
+        gltf-model="#Kapselpressmaschine"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 20000"
+        shader="standard"
+        >
+      </a-entity>
+
 
       </a-marker>
       
