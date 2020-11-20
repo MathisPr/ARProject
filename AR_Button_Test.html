@@ -5,38 +5,46 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <script>
     window.onload = function () {
-
-      //declare variable for hide-button
-      let hide = false;
-      
+    
       //Rotation-Button - absolute
       document
         .querySelector(".rotate-button")
-        .addEventListener("click", function () {        
+        .addEventListener("click", f_rotate45)
+        
+        function f_rotate45() {        
           let box = document.querySelector('#box');
           box.object3D.rotation.y = THREE.Math.degToRad(45);
-        });
+        };
 
       //Position-Button - absolute
       document        
         .querySelector(".position-button")
-        .addEventListener("click", function () {        
+        .addEventListener("click", f_positionadd)
+        
+        function f_positionadd() {        
           let box = document.querySelector('#box');
           box.setAttribute('position', {x: 0.5, y: 0, z: 0}); 
-        });
+        };
       
       //Color-Button
       document        
         .querySelector(".color-button")
-        .addEventListener("click", function () {        
+        .addEventListener("click", f_colorchange)
+        
+        function f_colorchange() {        
           let box = document.querySelector('#box');
           box.setAttribute('material', 'color', 'red');
-        });
+        };
  
       //Hide-Button
       document        
         .querySelector(".hide-button")
-        .addEventListener("click", function () {        
+        .addEventListener("click", f_hide)
+        
+      //declare variable for hide-button
+      let hide = false;
+
+        function f_hide () {        
           let box = document.querySelector('#box');
 
                   
@@ -50,7 +58,7 @@
               document.querySelector('.hide-button').innerText="Unhide";
               hide = true;
             }
-          });
+          };
       
       
     }; 
@@ -86,7 +94,7 @@
   </style>
   <body style="margin : 0px; overflow: hidden;">
     <div class="buttons">
-      <button class="rotate-button">Rotation</button>
+      <button class="rotate-button">Rotate 45°</button>
       <button class="position-button">Position</button>
       <button class="color-button">Color</button>
       <button class="hide-button">Hide</button>
