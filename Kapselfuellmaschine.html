@@ -17,10 +17,20 @@
         .addEventListener("click", f_animation1)
         
         function f_animation1() {        
-          let gltfobj = document.querySelector("#Kapselfuellmaschine");
+          let gltfobj = document.querySelector("#KapselfuellmaschineA");
 
           gltfobj.setAttribute('position', {x: 0.5, y: 0, z: 0}); 
-        }; 
+        };
+
+              //Rotation-Button - absolute
+      document
+        .querySelector(".rotate-button")
+        .addEventListener("click", f_rotate45)
+        
+        function f_rotate45() {        
+          let box = document.querySelector('#KapselfuellmaschineA');
+          box.object3D.rotation.y = THREE.Math.degToRad(45);
+        };
       
     }; 
   </script>
@@ -41,6 +51,10 @@
     .animation1-button {
 
     }
+
+    .rotate-button {
+
+    }
     
   </style>
 
@@ -59,6 +73,7 @@
 
   <div class="buttons">
     <button class="animation1-button">Animation1</button>
+    <button class="rotate-button">Rotate 45°</button>
   </div>
 
 
@@ -67,7 +82,7 @@
       <a-marker preset="hiro">
 
         <a-entity
-          id="Kapselfuellmaschine"
+          id="KapselfuellmaschineA"
           scale="8 8 8"
           gltf-model="#Kapselfuellmaschine"
           animation-mixer="clip: Brett_Deckel; timeScale: 0.5"
