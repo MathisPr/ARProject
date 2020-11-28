@@ -17,7 +17,7 @@
         .addEventListener("click", f_animation_L_A)
         
         function f_animation_L_A() {        
-          let gltfobj = document.querySelector("#KapselfuellmaschineA");
+          let gltfobj = document.querySelector("#Kapselfuellgeraet_entity");
 
           gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_A_Ani", timeScale: 1, loop: "once", clampWhenFinished: true}); 
         };
@@ -28,7 +28,7 @@
         .addEventListener("click", f_animation_L_B)
         
         function f_animation_L_B() {        
-          let gltfobj = document.querySelector("#KapselfuellmaschineA");
+          let gltfobj = document.querySelector("#Kapselfuellgeraet_entity");
 
           gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_B_Ani", timeScale: 1, loop: "once"}); 
         };
@@ -39,7 +39,7 @@
         .addEventListener("click", f_animation_L_C)
         
         function f_animation_L_C() {        
-          let gltfobj = document.querySelector("#KapselfuellmaschineA");
+          let gltfobj = document.querySelector("#Kapselfuellgeraet_entity");
 
           gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_C_Ani", timeScale: 1, loop: "once"}); 
         };
@@ -60,7 +60,7 @@
       z-index: 10;
     }
 
-    .animation-LochplatteA-button" {
+    .animation-LochplatteA-button {
 
     }
 
@@ -75,14 +75,14 @@
   </style>
 
   <head>
-      <title>AR A-Frame+ARJS Kapselfüllmaschine.gltf Animated</title>
+      <title>AR A-Frame+ARJS Kapselfüllgraet.gltf Animated</title>
   </head>
 
   <body style="margin : 0px; overflow: hidden;">
 
     <a-assets>
       <a-asset-item
-          id="Kapselfuellmaschine"
+          id="Kapselfuellgeraet_gltf"
           src="https://raw.githubusercontent.com/MathisPr/ARProject/main/assets/Kapselfuellgeraet.gltf"
       ></a-asset-item>
   </a-assets>
@@ -99,12 +99,11 @@
       <a-marker preset="hiro">
 
         <a-entity
-          id="KapselfuellmaschineA"
+          id="Kapselfuellgeraet_entity"
           scale="8 8 8"
-          gltf-model="#Kapselfuellmaschine"
+          gltf-model="#Kapselfuellgeraet_gltf"
           shader="standard"
           >
-
         </a-entity>
 
       </a-marker>
