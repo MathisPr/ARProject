@@ -11,25 +11,37 @@
   <script>
     window.onload = function () {
     
-      //Animation1-Button
+      //Animation_deckel
       document
-        .querySelector(".animation1-button")
-        .addEventListener("click", f_animation1)
+        .querySelector(".animation-L_A-button")
+        .addEventListener("click", f_animation_L_A)
         
-        function f_animation1() {        
+        function f_animation_L_A() {        
           let gltfobj = document.querySelector("#KapselfuellmaschineA");
 
-          gltfobj.setAttribute('animation-mixer', {clip: "Brett_Deckel", timeScale: 0.5}); 
+          gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_A_Ani", timeScale: 1, loop: "once", clampWhenFinished: true}); 
         };
 
-              //Rotation-Button - absolute
+      //Animation_mitte
       document
-        .querySelector(".rotate-button")
-        .addEventListener("click", f_rotate45)
+        .querySelector(".animation-L_B-button")
+        .addEventListener("click", f_animation_L_B)
         
-        function f_rotate45() {        
-          let box = document.querySelector('#KapselfuellmaschineA');
-          box.object3D.rotation.y = THREE.Math.degToRad(45);
+        function f_animation_L_B() {        
+          let gltfobj = document.querySelector("#KapselfuellmaschineA");
+
+          gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_B_Ani", timeScale: 1, loop: "once"}); 
+        };
+      
+      //Animation_boden
+      document
+        .querySelector(".animation-L_C-button")
+        .addEventListener("click", f_animation_L_C)
+        
+        function f_animation_L_C() {        
+          let gltfobj = document.querySelector("#KapselfuellmaschineA");
+
+          gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_C_Ani", timeScale: 1, loop: "once"}); 
         };
       
     }; 
@@ -48,11 +60,15 @@
       z-index: 10;
     }
 
-    .animation1-button {
+    .animation-LochplatteA-button" {
 
     }
 
-    .rotate-button {
+    .animation-LochplatteB-button {
+
+    }
+    
+    .animation-LochplatteC-button {
 
     }
     
@@ -67,13 +83,14 @@
     <a-assets>
       <a-asset-item
           id="Kapselfuellmaschine"
-          src="assets/Kapselfuellmaschine.gltf"
+          src="https://raw.githubusercontent.com/MathisPr/ARProject/main/assets/Kapselfuellgeraet.gltf"
       ></a-asset-item>
   </a-assets>
 
   <div class="buttons">
-    <button class="animation1-button">Animation1</button>
-    <button class="rotate-button">Rotate 45°</button>
+    <button class="animation-L_A-button">Lochplatte A</button>
+    <button class="animation-L_B-button">Lochplatte B</button>
+  <button class="animation-L_C-button">Lochplatte C</button>
   </div>
 
 
@@ -85,9 +102,9 @@
           id="KapselfuellmaschineA"
           scale="8 8 8"
           gltf-model="#Kapselfuellmaschine"
-          animation-mixer="clip: Brett_Deckel; timeScale: 0.5"
           shader="standard"
           >
+
         </a-entity>
 
       </a-marker>
