@@ -6,6 +6,7 @@
   <script>
     window.onload = function () {
       
+      //get the object by getElementByID or querySelector
       let entityEl = document.getElementById("object");
 
       document
@@ -14,6 +15,8 @@
           
         function f_changeObject () {
           
+          //set the attributes of the object with setAttribute or object3D for object3D 
+          //see https://aframe.io/docs/1.0.0/introduction/javascript-events-dom-apis.html#updating-position-rotation-scale-and-visible
           entityEl.setAttribute('geometry', {primitive: "box", height: 3, width: 1, color: "black"});
           
         };      
