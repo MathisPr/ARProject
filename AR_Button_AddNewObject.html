@@ -6,21 +6,24 @@
   <script>
     window.onload = function () {
       
-      let sceneEl = document.querySelector('a-scene');
+      //get the a-marker to add the entity; when you use a-scene it will not load, because the object in this code will only load when inside a-maker
+      let sceneEl = document.querySelector('a-marker');
+      
       
       document
         .querySelector(".button")
         .addEventListener("click", f_addObject)
           
         function f_addObject () {
-          alert("Test"); 
           
-          //let entityEl = sceneEl.createElement('a-entity');
-          let entityEl = document.getElementById("box");
-          //sceneEl.appendChild(entityEl);
+          //create the entity; it will be empty; use setAttribute for this
+          let entityEl = document.createElement('a-entity');
+
+          //append it as a child to sceneE1, in this case a-marker
+          sceneEl.appendChild(entityEl);
           
-          entityEl.setAttribute('geometry', {primitive: "box", height: 3, width: 1, color: "black"});
-          
+          //change the property of the entity
+          entityEl.setAttribute('geometry', {primitive: "box"});
         };      
     };
 
@@ -55,9 +58,8 @@
     <a-scene embedded arjs>
       <a-marker preset="hiro">
         
-        <a-entity id="box" geometry="primitive: box" material="color: red">
-            
-        </a-entity>
+        <!--nothing inside-->
+        
 
       </a-marker>
 
