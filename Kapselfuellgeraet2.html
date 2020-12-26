@@ -20,6 +20,8 @@
           let gltfobj = document.querySelector("#Kapselfuellgeraet_entity");
 
           gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_A_Ani", timeScale: 1, loop: "once", clampWhenFinished: true}); 
+          let Ani_A = true;
+
         };
 
       //Animation_mitte
@@ -30,7 +32,11 @@
         function f_animation_L_B() {        
           let gltfobj = document.querySelector("#Kapselfuellgeraet_entity");
 
-          gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_B_Ani", timeScale: 1, loop: "once"}); 
+          gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_B_Ani", timeScale: 1, loop: "once"});
+
+          if Ani_A == true {
+            gltfobj.setAttribute('position', {x: 0, y: 0, z: });
+          }
         };
       
       //Animation_boden
@@ -90,7 +96,7 @@
   <div class="buttons">
     <button class="animation-L_A-button">Lochplatte A</button>
     <button class="animation-L_B-button">Lochplatte B</button>
-  <button class="animation-L_C-button">Lochplatte C</button>
+    <button class="animation-L_C-button">Lochplatte C</button>
   </div>
 
 
