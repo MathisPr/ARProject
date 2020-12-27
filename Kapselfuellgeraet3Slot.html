@@ -27,11 +27,6 @@
       let Slot2 = false;
       let Slot3 = false;
       
-      //let Slot1_pos = object3D.position.set(-1.5, 0.2, 1.5); // geht nicht
-      //let Slot2_pos = object3D.position.set(-1.5, 0.135, 0); // geht nicht
-      //let Slot3_pos = object3D.position.set(-1.5, 0.075, -1.5); // geht nicht
-      
-      //let Reset_pos = object3D.position.set(0, 0, 0); // geht nicht
       
       //Animation Lochplatte A
       document
@@ -40,23 +35,11 @@
         
         function f_animation_L_A() {                  
 
+                
           
-          /*
-          if (Slot3 === false) {           
-              gltfobj_LA.object3D.position.set(-1.5, 0.075, -1.5);
-              Slot3 = true;
-          }
-          else if (Slot2 === false) {           
-              gltfobj_LA.object3D.position.set(-1.5, 0.135, 0);
-              Slot2 = true;
-          }
-          else (Slot1 === false) {           
-              gltfobj_LA.object3D.position.set(-1.5, 0.075, -1.5);
-              Slot1 = true;
-          }
-          */
 
-      };
+
+        };
 
       
       //Animation Lochplatte B
@@ -136,7 +119,7 @@
   <body style="margin : 0px; overflow: hidden;">
 
     <a-assets>
-      <a-asset-item
+      <a-asset-item 
           id="Kapselfuellgeraet_gltf"
           src="https://raw.githubusercontent.com/MathisPr/ARProject/main/assets/Kapselfuellgeraet0.gltf"
       ></a-asset-item>
