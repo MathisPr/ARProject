@@ -16,11 +16,17 @@
         .querySelector(".animation-L_A-button")
         .addEventListener("click", f_animation_L_A)
         
+        
+        //declare variables
+        let Ani_A = false; //new
+
+
         function f_animation_L_A() {        
           let gltfobj = document.querySelector("#Kapselfuellgeraet_entity");
 
           gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_A_Ani", timeScale: 1, loop: "once", clampWhenFinished: true}); 
-          let Ani_A = true;
+          
+          Ani_A = true; //new
 
         };
 
@@ -34,9 +40,11 @@
 
           gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_B_Ani", timeScale: 1, loop: "once"});
 
-          if Ani_A == true {
-            gltfobj.setAttribute('position', {x: 0, y: 0, z: });
+          //new
+          if (Ani_A === true) {
+            gltfobj.setAttribute('position', {x: 0, y: 0, z: 0});
           }
+          //end new
         };
       
       //Animation_boden
