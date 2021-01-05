@@ -16,13 +16,20 @@
   <script>
     window.onload = function () {
     
+      //Aufgabe
+      alert("Setzen Sie die Lochplatten richtig zusammen.");
       
       //let gltfobj_LA = document.querySelector("#Lochplatte_A_entity");
       let gltfobj_LA = document.getElementById("Lochplatte_A_entity");
       let gltfobj_LB = document.getElementById("Lochplatte_B_entity");
       let gltfobj_LC = document.getElementById("Lochplatte_C_entity");
-      let gltfobj_Gestell = document.getElementById("Gestell_entity");
-           
+      let gltfobj_Gestell = document.getElementById("Gestell_entity");  
+      
+      let L_A_pos = false;
+      let L_B_pos = false;
+      let L_C_pos = false;
+        
+      
       //Animation Lochplatte A
       document
         .querySelector(".animation-L_A-button")
@@ -30,8 +37,15 @@
         
         function f_animation_L_A() {        
           //let gltfobj = document.querySelector("#Kapselfuellgeraet_entity");
-          
+      
+          //gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_A_Ani", timeScale: 1, loop: "once"});
           gltfobj_LA.object3D.position.set(-1.5, 0.2, 1.5);
+          
+          L_A_pos = true;
+          
+          if (L_A_pos === true && L_B_pos === true && L_C_pos === true) {
+            alert("Die Lochplatten sind richtig angeordnet")
+          };
         };
 
       
@@ -45,6 +59,12 @@
 
           //gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_B_Ani", timeScale: 1, loop: "once"});
           gltfobj_LB.object3D.position.set(-1.5, 0.135, 0);
+          
+          L_B_pos = true;
+          
+          if (L_A_pos === true && L_B_pos === true && L_C_pos === true) {
+            alert("Die Lochplatten sind richtig angeordnet")
+          };
         };
       
       
@@ -59,6 +79,11 @@
           //gltfobj.setAttribute('animation-mixer', {clip: "Lochplatte_C_Ani", timeScale: 1, loop: "once"});
           gltfobj_LC.object3D.position.set(-1.5, 0.075, -1.5);
           
+          L_C_pos = true;
+          
+          if (L_A_pos === true && L_B_pos === true && L_C_pos === true) {
+            alert("Die Lochplatten sind richtig angeordnet")
+          };
         };
       
       
@@ -73,10 +98,14 @@
           gltfobj_LB.object3D.position.set(0, 0, 0);
           gltfobj_LC.object3D.position.set(0, 0, 0);
           
+          L_A_pos = false;
+          L_B_pos = false;
+          L_C_pos = false;
+          
         };
       
-      
-    }; 
+    };
+                 
   </script>
   
   <style>
